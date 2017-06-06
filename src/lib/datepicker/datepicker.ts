@@ -25,6 +25,7 @@ import {
   ValidatorFn,
   Validators
 } from '@angular/forms';
+import { DateAdapter } from '../core/datetime/index';
 import { DateLocale } from './date-locale';
 import { DateUtil } from './date-util';
 import {
@@ -83,7 +84,7 @@ export type Container = 'inline' | 'dialog';
     fadeInContent,
     slideCalendar
   ],
-  encapsulation: ViewEncapsulation.None
+  //encapsulation: ViewEncapsulation.None
 })
 export class Md2Datepicker implements AfterContentInit, OnDestroy, ControlValueAccessor,
   Validator {
@@ -141,7 +142,23 @@ export class Md2Datepicker implements AfterContentInit, OnDestroy, ControlValueA
   /** Event emitted when the selected date has been changed by the user. */
   @Output() change: EventEmitter<Md2DateChange> = new EventEmitter<Md2DateChange>();
 
+
+  /** The view that the calendar should start in. */
+  @Input() startView: 'month' | 'year' = 'month';
+
+  /** A function used to filter which dates are selectable. */
+  @Input() dateFilter: (date: Date) => boolean;
+
+  /** Date filter for the month and year views. */
+  _dateFilterForViews = (date: Date) => {
+    return !!date &&
+      (!this.dateFilter || this.dateFilter(date)) &&
+      (!this.min || this._dateAdapter.compareDate(date, this.min) >= 0) &&
+      (!this.max || this._dateAdapter.compareDate(date, this.max) <= 0);
+  }
+
   constructor(private _element: ElementRef, private _overlay: Overlay,
+    @Optional() public _dateAdapter: DateAdapter<Date>,
     private _viewContainerRef: ViewContainerRef, private _locale: DateLocale,
     private _scrollDispatcher: ScrollDispatcher,
     private _util: DateUtil, @Self() @Optional() public _control: NgControl) {
@@ -595,7 +612,7 @@ export class Md2Datepicker implements AfterContentInit, OnDestroy, ControlValueA
   _showYear() {
     this._isYearsVisible = true;
     this._isCalendarVisible = true;
-    this._scrollToSelectedYear();
+    //this._scrollToSelectedYear();
   }
 
   private getYears() {
@@ -640,7 +657,6 @@ export class Md2Datepicker implements AfterContentInit, OnDestroy, ControlValueA
   _toggleHours(value: ClockView) {
     this._isYearsVisible = false;
     this._isCalendarVisible = false;
-    this._isYearsVisible = false;
     this._clockView = value;
   }
 
@@ -732,8 +748,17 @@ export class Md2Datepicker implements AfterContentInit, OnDestroy, ControlValueA
       this._max && this._util.getMonthDistance(this.activeDate, this._max) > 0;
   }
 
-  _onActiveTimeChange(event: Date) {
-    this.activeDate = event;
+  _onActiveDateChange(date: Date) {
+    this.activeDate = date;
+  }
+
+  _onDateChange(date: Date) {
+    this.value = date;
+    if (this._isYearsVisible) {
+      this._isYearsVisible = false;
+    } else {
+      this._dateSelected(date);
+    }
   }
 
   _onTimeChange(event: Date) {
@@ -741,6 +766,7 @@ export class Md2Datepicker implements AfterContentInit, OnDestroy, ControlValueA
     if (this._clockView === 'hour') {
       this._clockView = 'minute';
     } else {
+      this._emitChangeEvent();
       this._clockView = 'hour';
       this._onBlur();
       this.close();
