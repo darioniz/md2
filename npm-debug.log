@@ -1,0 +1,143 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@4.1.2
+3 info using node@v7.5.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'D:\\Users\\dnizetic\\Documents\\Angular Projects\\md2',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\dnizetic\AppData\Roaming\npm-cache\@darioniz\md2\0.0.21\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\dnizetic\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle @darioniz/md2@0.0.21~prepublish: @darioniz/md2@0.0.21
+11 silly lifecycle @darioniz/md2@0.0.21~prepublish: no script for prepublish, continuing
+12 info lifecycle @darioniz/md2@0.0.21~prepare: @darioniz/md2@0.0.21
+13 silly lifecycle @darioniz/md2@0.0.21~prepare: no script for prepare, continuing
+14 verbose tar pack [ 'C:\\Users\\dnizetic\\AppData\\Roaming\\npm-cache\\@darioniz\\md2\\0.0.21\\package.tgz',
+14 verbose tar pack   'D:\\Users\\dnizetic\\Documents\\Angular Projects\\md2' ]
+15 verbose tarball C:\Users\dnizetic\AppData\Roaming\npm-cache\@darioniz\md2\0.0.21\package.tgz
+16 verbose folder D:\Users\dnizetic\Documents\Angular Projects\md2
+17 verbose addLocalTarball adding from inside cache C:\Users\dnizetic\AppData\Roaming\npm-cache\@darioniz\md2\0.0.21\package.tgz
+18 verbose correctMkdir C:\Users\dnizetic\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+19 silly cache afterAdd @darioniz/md2@0.0.21
+20 verbose afterAdd C:\Users\dnizetic\AppData\Roaming\npm-cache\@darioniz\md2\0.0.21\package\package.json not in flight; writing
+21 verbose correctMkdir C:\Users\dnizetic\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+22 verbose afterAdd C:\Users\dnizetic\AppData\Roaming\npm-cache\@darioniz\md2\0.0.21\package\package.json written
+23 silly publish { name: '@darioniz/md2',
+23 silly publish   version: '0.0.21',
+23 silly publish   description: 'Angular2 based Material Design components, directives and services are Accordion, Autocomplete, Chips(Tags), Collapse, Colorpicker, Data Table, Datepicker, Dialog(Modal), Menu, Multiselect, Select, Tabs, Tags(Chips), Toast and Tooltip.',
+23 silly publish   main: './md2.umd.js',
+23 silly publish   module: './index.js',
+23 silly publish   typings: './index.d.ts',
+23 silly publish   repository: { type: 'git', url: 'git+https://github.com/Promact/md2.git' },
+23 silly publish   keywords:
+23 silly publish    [ 'angular',
+23 silly publish      'material',
+23 silly publish      'material design',
+23 silly publish      'component',
+23 silly publish      'accordion',
+23 silly publish      'autocomplete',
+23 silly publish      'collapse',
+23 silly publish      'colorpicker',
+23 silly publish      'data-table',
+23 silly publish      'datepicker',
+23 silly publish      'dialog',
+23 silly publish      'modal',
+23 silly publish      'menu',
+23 silly publish      'dropdown',
+23 silly publish      'multiselect',
+23 silly publish      'select',
+23 silly publish      'tabs',
+23 silly publish      'tags',
+23 silly publish      'chips',
+23 silly publish      'toast',
+23 silly publish      'tooltip' ],
+23 silly publish   license: 'MIT',
+23 silly publish   bugs: { url: 'https://github.com/Promact/md2/issues' },
+23 silly publish   homepage: 'https://github.com/Promact/md2#readme',
+23 silly publish   author:
+23 silly publish    { name: 'Dharmesh Pipariya',
+23 silly publish      email: 'pipariyadharmesh@gmail.com' },
+23 silly publish   peerDependencies:
+23 silly publish    { '@angular/core': '^4.0.0',
+23 silly publish      '@angular/common': '^4.0.0',
+23 silly publish      '@angular/http': '^4.0.0' },
+23 silly publish   dependencies: {},
+23 silly publish   devDependencies: {},
+23 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+23 silly publish   readme: '# MD2\r\n\r\nAngular2 based Material Design components, directives and services are Accordion, Autocomplete, Chips(Tags), Collapse, Colorpicker, Data Table, Datepicker, Dialog(Modal), Menu, Multiselect, Select, Tabs, Tags(Chips), Toast and Tooltip.\r\n\r\n[![npm version](https://badge.fury.io/js/md2.svg)](https://www.npmjs.com/package/md2)\r\n[![Build Status](https://travis-ci.org/Promact/md2.svg?branch=master)](https://travis-ci.org/Promact/md2)\r\n\r\n### Installation\r\n\r\nThe latest release of MD2 can be installed from npm\r\n\r\n`npm install --save md2`\r\n\r\nPlaying with the latest changes from [master](https://github.com/Promact/md2/tree/master) is also possible\r\n\r\n`npm install --save https://github.com/Promact/md2.git`\r\n\r\n### Getting started\r\n\r\nSetup `MD2` in your project\r\n\r\n```ts\r\n// system.config.js\r\n// ================\r\n{\r\n  map: {\r\n    \'md2\': \'node_modules/md2/bundles/md2.umd.js\'\r\n  }\r\n}\r\n\r\n\r\n// app.module.ts\r\n// =============\r\n\r\nimport { Md2Module }  from \'md2\';\r\n@NgModule({\r\n  imports: [\r\n    ...,\r\n    Md2Module.forRoot(),\r\n  ],\r\n  ...\r\n})\r\nexport class AppModule { }\r\n\r\n```\r\n\r\n### Demo\r\n\r\n[demo](http://code.promactinfo.com/md2) and [demo sources](https://github.com/Promact/md2/tree/master/src/demo-app).\r\n\r\n\r\n### Components:\r\n\r\n- [md2-accordion](https://github.com/Promact/md2/tree/master/src/lib/accordion)\r\n- [md2-autocomplete](https://github.com/Promact/md2/tree/master/src/lib/autocomplete)\r\n- [md2-chips](https://github.com/Promact/md2/tree/master/src/lib/chips)\r\n- [md2-collapse](https://github.com/Promact/md2/tree/master/src/lib/collapse)\r\n- [md2-colorpicker](https://github.com/Promact/md2/tree/master/src/lib/colorpicker)\r\n- [md2-data-table](https://github.com/Promact/md2/tree/master/src/lib/data-table)\r\n- [md2-datepicker](https://github.com/Promact/md2/tree/master/src/lib/datepicker)\r\n- [md2-dialog](https://github.com/Promact/md2/tree/master/src/lib/dialog)\r\n- [md2-menu](https://github.com/Promact/md2/tree/master/src/lib/menu)\r\n- [md2-select](https://github.com/Promact/md2/tree/master/src/lib/select)\r\n- [md2-tabs](https://github.com/Promact/md2/tree/master/src/lib/tabs)\r\n- [md2-tags](https://github.com/Promact/md2/tree/master/src/lib/tags)\r\n- [md2-toast](https://github.com/Promact/md2/tree/master/src/lib/toast)\r\n- [md2-tooltip](https://github.com/Promact/md2/tree/master/src/lib/tooltip)\r\n\r\n\r\n## The goal of MD2\r\nOur goal is to build a set of high-quality UI components built with Angular and TypeScript,\r\nfollowing the Material Design spec. These\r\ncomponents will serve as an example of how to write Angular code following best practices.\r\n\r\n### What do we mean by "high-quality"?\r\n* Internationalized and accessible so that all users can use them.\r\n* Straightforward APIs that don\'t confuse developers.\r\n* Behave as expected across a wide variety of use-cases without bugs.\r\n* Behavior is well-tested with both unit and integration tests.\r\n* Customizable within the bounds of the Material Design specification.\r\n* Performance cost is minimized.\r\n* Code is clean and well-documented to serve as an example for Angular devs.\r\n\r\n## Browser and screen reader support\r\nMD2 supports the most recent two versions of all major browsers:\r\nChrome (including Android), Firefox, Safari (including iOS), and IE11 / Edge\r\n\r\nWe also aim for great user experience with the following screen readers:\r\n* NVDA and JAWS with IE / FF / Chrome (on Windows).\r\n* VoiceOver with Safari on iOS and Safari / Chrome on OSX.\r\n* TalkBack with Chrome on Android.\r\n',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: '1fc10982fd035746e78a79fcdac27b9fc92bd3b9',
+23 silly publish   _id: '@darioniz/md2@0.0.21',
+23 silly publish   _shasum: '26dcb5a4783e524d6ec6c028d0088c249a7752fc',
+23 silly publish   _from: '.' }
+24 info lifecycle @darioniz/md2@0.0.21~prepublishOnly: @darioniz/md2@0.0.21
+25 silly lifecycle @darioniz/md2@0.0.21~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name @darioniz/md2
+28 silly mapToRegistry scope (from package name) @darioniz
+29 verbose mapToRegistry no registry URL found in name for scope @darioniz
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry data Result {
+32 silly mapToRegistry   raw: '@darioniz/md2',
+32 silly mapToRegistry   scope: '@darioniz',
+32 silly mapToRegistry   escapedName: '@darioniz%2fmd2',
+32 silly mapToRegistry   name: '@darioniz/md2',
+32 silly mapToRegistry   rawSpec: '',
+32 silly mapToRegistry   spec: 'latest',
+32 silly mapToRegistry   type: 'tag' }
+33 silly mapToRegistry uri https://registry.npmjs.org/@darioniz%2fmd2
+34 verbose publish registryBase https://registry.npmjs.org/
+35 silly publish uploading C:\Users\dnizetic\AppData\Roaming\npm-cache\@darioniz\md2\0.0.21\package.tgz
+36 verbose request uri https://registry.npmjs.org/@darioniz%2fmd2
+37 verbose request sending authorization for write operation
+38 info attempt registry request try #1 at 16:00:41
+39 verbose request using bearer token for auth
+40 verbose request id bf39c3a54b0b8acf
+41 http request PUT https://registry.npmjs.org/@darioniz%2fmd2
+42 http 402 https://registry.npmjs.org/@darioniz%2fmd2
+43 verbose headers { 'content-type': 'application/json',
+43 verbose headers   'cache-control': 'max-age=0',
+43 verbose headers   'content-length': '119',
+43 verbose headers   'accept-ranges': 'bytes',
+43 verbose headers   date: 'Tue, 06 Jun 2017 14:00:43 GMT',
+43 verbose headers   via: '1.1 varnish',
+43 verbose headers   connection: 'keep-alive',
+43 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+43 verbose headers   'x-cache': 'MISS',
+43 verbose headers   'x-cache-hits': '0',
+43 verbose headers   'x-timer': 'S1496757642.648255,VS0,VE1931' }
+44 verbose request invalidating C:\Users\dnizetic\AppData\Roaming\npm-cache\registry.npmjs.org\_40darioniz_252fmd2 on PUT
+45 error publish Failed PUT 402
+46 verbose stack Error: You need a paid account to perform this action. For more info, visit: https://www.npmjs.com/private-modules : @darioniz/md2
+46 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:304:12)
+46 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:292:14)
+46 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:212:14)
+46 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:186:22)
+46 verbose stack     at emitTwo (events.js:106:13)
+46 verbose stack     at Request.emit (events.js:192:7)
+46 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1081:10)
+46 verbose stack     at emitOne (events.js:96:13)
+46 verbose stack     at Request.emit (events.js:189:7)
+46 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1001:12)
+47 verbose statusCode 402
+48 verbose pkgid @darioniz/md2
+49 verbose cwd D:\Users\dnizetic\Documents\Angular Projects\md2
+50 error Windows_NT 10.0.15063
+51 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+52 error node v7.5.0
+53 error npm  v4.1.2
+54 error code E402
+55 error You need a paid account to perform this action. For more info, visit: https://www.npmjs.com/private-modules : @darioniz/md2
+56 error If you need help, you may report this error at:
+56 error     <https://github.com/npm/npm/issues>
+57 verbose exit [ 1, true ]
